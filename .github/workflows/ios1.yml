@@ -24,13 +24,8 @@ jobs:
           echo $default | cat >default
           echo Using default scheme: $default
           
-      - name: Install Sauce Connect
-        run: |
-          curl -O https://saucelabs.com/downloads/sc-4.9.1-osx.zip
-          unzip -d sauce_connect sc-4.9.1-osx.zip
-
-      - name: Start Sauce Connect
-        run: ./sauce_connect/sc-4.9.1-osx/bin/sc --user ${{ secrets.SAUCE_USERNAME }} --api-key ${{ secrets.SAUCE_ACCESS_KEY }} --region us-west --tunnel-name rajesh.pandian_tunnel_name
+      - name: Open iOS Simulator
+        run: open -a Simulator
           
       - name: Build
         env:
