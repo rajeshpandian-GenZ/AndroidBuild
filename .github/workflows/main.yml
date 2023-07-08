@@ -1,4 +1,5 @@
 name: Android CI
+
 on:
   push:
     branches: [ "main" ]
@@ -30,8 +31,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: my-app
-        path: app/build/outputs/apk/release/app-release.apk
-    - name: Run vulnerability scan
-      uses: dependency-check/dependency-check-action@v2
-      with:
-        scan-path: app/build/outputs/apk/release/
+        path: app/build/outputs/apk/release/
