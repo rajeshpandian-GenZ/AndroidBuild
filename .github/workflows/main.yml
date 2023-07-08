@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: my-app
-        path: app-dev-release.apk     
+        path: /android/app/build/outputs/apk     
