@@ -23,6 +23,17 @@ buildscript {
         classpath('com.facebook.react:react-native-gradle-plugin')
     }
 }
+plugins {
+  id "org.sonarqube" version "4.2.1.3168"
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "genzpoc_androidbuild"
+    property "sonar.organization", "genzpoc"
+    property "sonar.host", "https://sonarcloud.io"
+  }
+}
 
 allprojects {
     repositories {
