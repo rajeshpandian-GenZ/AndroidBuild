@@ -1,0 +1,36 @@
+name: Build iOS App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+        with:
+          xcode-version: '12.x'
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Install dependencies
+        run: |
+          cd ios
+          pod install
+
+      - name: Build the app
+        run: |
+          xcodebuild clean build \
+            -workspace myapp.xcworkspace \
+            -scheme myapp \
+            -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
+
+      # Add additional steps for testing or archiving the app if needed
