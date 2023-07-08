@@ -26,8 +26,8 @@ jobs:
           
       - name: Install Sauce Connect
         run: |
-          curl -O https://saucelabs.com/downloads/sc-latest-ios.zip
-          unzip -d sauce_connect sc-latest-ios.zip
+          curl -O https://saucelabs.com/downloads/sc-4.9.1-osx.zip
+          unzip -d sauce_connect sc-4.9.1-osx.zip
 
       - name: Start Sauce Connect
         run: ./sauce_connect/bin/sc --user ${{ secrets.SAUCE_USERNAME }} --api-key ${{ secrets.SAUCE_ACCESS_KEY }} --datacenter us-west-1
