@@ -30,7 +30,7 @@ jobs:
           unzip -d sauce_connect sc-4.9.1-osx.zip
 
       - name: Start Sauce Connect
-        run: .sauce_connect/sc-4.9.1-osx/bin/sc --user ${{ secrets.SAUCE_USERNAME }} --api-key ${{ secrets.SAUCE_ACCESS_KEY }} --datacenter us-west-1
+        run: ./sauce_connect/sc-4.9.1-osx/bin/sc --user ${{ secrets.SAUCE_USERNAME }} --api-key ${{ secrets.SAUCE_ACCESS_KEY }} --datacenter us-west-1
           
       - name: Build
         env:
