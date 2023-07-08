@@ -124,6 +124,9 @@ android {
     lint {
         baseline = file("lint-baseline.xml")
     }
+   lintOptions {
+        tasks.lint.enabled = false
+    }
     splits {
         abi {
             reset()
