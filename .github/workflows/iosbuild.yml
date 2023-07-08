@@ -1,5 +1,4 @@
 name: Build iOS App
-
 on:
   push:
     branches:
