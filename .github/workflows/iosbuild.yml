@@ -28,9 +28,4 @@ jobs:
 
       - name: Build the app
         run: |
-          xcodebuild clean build \
-            -workspace myapp.xcworkspace \
-            -scheme myapp \
-            -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
-
-      # Add additional steps for testing or archiving the app if needed
+          npx expo start -c --ios
