@@ -58,7 +58,7 @@ jobs:
             # mandatory
             -Dsonar.projectKey=genzpoc_androidbuild
             -Dsonar.organization=genzpoc
-            -Dsonar.projectBaseDir=${env.GITHUB_WORKSPACE}/android
+            -Dsonar.projectBaseDir=${env.GITHUB_WORKSPACE}
             -Dsonar.verbose=true
             -Dsonar.scm.provider=git
             -Dsonar.tests=test
