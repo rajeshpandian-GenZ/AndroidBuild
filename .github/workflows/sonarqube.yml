@@ -45,6 +45,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v2
+        
       - name: Analyze with SonarCloud
 
         # You can pin the exact commit or the version.
