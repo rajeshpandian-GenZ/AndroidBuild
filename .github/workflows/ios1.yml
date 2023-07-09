@@ -41,7 +41,14 @@ jobs:
           scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
-          npx react-native run-ios --simulator="iPhone 12" || (echo "Failed to build iOS project. Attempting Xcode build logs capture..." && xcodebuild -showBuildLog -project "myapp.xcodeproj")
+      - name: Build iOS simulator
+        run: |
+          npx react-native run-ios --simulator="iPhone 12" || (echo "Failed to build iOS project. Attempting Xcode build logs capture..." && xcodebuild -quiet -project "myapp.xcodeproj" > build.log 2>&1)
+          if [ -f "build.log" ]; then
+            echo "Xcode build logs:"
+            cat build.log
+          fi
+          exit 1
           cd ios
           device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
           if [ $scheme = default ]; then scheme=$(cat default); fi
