@@ -151,7 +151,21 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+flavorDimensions += "version"
 
+    productFlavors {
+
+        create("vanilla") {
+
+            dimension = "version"
+
+            applicationId = "com.myapprnpocdemo"
+
+            versionNameSuffix = "-rnpoc"
+
+        }
+
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
