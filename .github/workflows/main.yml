@@ -26,9 +26,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x android/gradlew
     - name: Build with Gradle
-      run: cd android && ./gradlew assembleRelease
+      run: cd android && ./gradlew bundleRelease
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
         name: my-app
-        path: ${{ github.workspace }}/android/app/build/outputs/apk/release/app-release.apk
+        path: ${{ github.workspace }}/android/app/build/outputs/bundle/vanillaRelease/app-vanilla-release.aab
