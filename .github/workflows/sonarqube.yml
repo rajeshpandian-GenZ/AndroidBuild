@@ -64,7 +64,7 @@ jobs:
             -Dsonar.projectKey=rajeshpandian-GenZ_AndroidBuild
             -Dsonar.organization=rajeshpandian-genz
             -Dsonar.projectBaseDir=${env.GITHUB_WORKSPACE}
-            -Dsonar.sources=src,__tests__
+            -Dsonar.sources=./,__tests__
             -Dsonar.scm.provider=git
             -Dsonar.exclusions=**/*.java
             -Dsonar.c.file.suffixes=-
